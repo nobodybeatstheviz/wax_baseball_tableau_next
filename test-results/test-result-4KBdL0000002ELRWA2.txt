@@ -1,0 +1,107 @@
+Test Case #1
+Utterance: I was at the Yankees vs Royals game on October 5 2024 - find me
+highlights of that game.
+┌─────────┬────────┬┬┐
+│ Test    │ Result │Expected│Actual│
+├─────────┼────────┼┼┤
+│ Topic   │ Pass   │game_highlights│game_highlights│
+│ Action  │ Pass   │['search_highlights']│['search_highlights']│
+ Ou │ Fa│Agent returns YouTube highlight    Here are the highlight videos I     │
+tco │   │videos for the October 5 2024      found for the Yankees vs. Royals    │
+me  │   │Yankees vs Royals game - each with game on October 5, 2024:            │
+│   │   │a title and a youtube.com/watch    │                                   │
+│   │   │link taken from the                - Royals vs. Yankees ALDS Game 1    │
+│   │   │search_highlights action output,   Highlights (10/5/24) | MLB          │
+│   │   │never invented.                    Highlights: URL_Redacted            │
+                                            - Yankees vs. Royals ALDS Game 4
+                                            Highlights (10/10/24) | MLB
+                                            Highlights: URL_Redacted
+                                            - Yankees vs. Royals ALDS Game 3
+                                            Highlights (10/9/24) | MLB
+                                            Highlights: URL_Redacted
+
+                                            Would you like highlights from any
+                                            other games?
+└─────────┴────────┴┴┘
+Generated Data
+┌─────────────────────────────────────┐
+│ Data                                │
+├─────────────────────────────────────┤
+│ [                                   │
+│   [                                 │
+│     {                               │
+│       "function": {                 │
+│         "name": "search_highlights" │
+│       }                             │
+│     }                               │
+│   ]                                 │
+│ ]                                   │
+└─────────────────────────────────────┘
+
+Test Case #2
+Utterance: Show me highlights from the Red Sox vs Rays game on May 14 2024.
+┌─────────┬────────┬┬┐
+│ Test    │ Result │Expected│Actual│
+├─────────┼────────┼┼┤
+│ Topic   │ Pass   │game_highlights│game_highlights│
+│ Action  │ Pass   │['search_highlights']│['search_highlights']│
+ Ou │ Pa│Agent returns YouTube highlight    Here are highlight videos for the   │
+tco │   │videos for the May 14 2024 Red Sox Red Sox vs Rays game on May 14,     │
+me  │   │vs Rays game with titles and       2024:                               │
+│   │   │youtube.com/watch links from the   │                                   │
+│   │   │action output.                     1. Rays vs. Red Sox Game Highlights │
+│   │   │                                   (5/14/24) | MLB Highlights          │
+│   │   │                                   URL_Redacted                        │
+│   │   │                                   │                                   │
+│   │   │                                   2. Boston Red Sox vs Tampa Bay Rays │
+│   │   │                                   | MLB Baseball Highlights |         │
+│   │   │                                   (5-14-24) #redsox #devilrays        │
+│   │   │                                   URL_Redacted                        │
+
+                                            3. Tampa Bay Rays Vs Boston Red Sox
+                                            Game Highlights 05/14/2024 | MLB
+                                            Highlights 2024
+                                            URL_Redacted
+
+                                            Would you like highlights from
+                                            another game?
+└─────────┴────────┴┴┘
+Generated Data
+┌─────────────────────────────────────┐
+│ Data                                │
+├─────────────────────────────────────┤
+│ [                                   │
+│   [                                 │
+│     {                               │
+│       "function": {                 │
+│         "name": "search_highlights" │
+│       }                             │
+│     }                               │
+│   ]                                 │
+│ ]                                   │
+└─────────────────────────────────────┘
+
+Test Case #3
+Utterance: What's my win rate when I see the Yankees?
+┌─────────┬────────┬┬┐
+│ Test    │ Result │Expected│Actual│
+├─────────┼────────┼┼┤
+│ Topic   │ Pass   │off_topic│off_topic│
+│ Action  │ Pass   │[]│[]│
+ Out│ Pa│Agent honestly says it only fetchesI can only fetch YouTube highlight  │
+ome      game highlight videos and asks for videos for specific baseball games.
+          game date and the two teams - it  If you give me a game date and the
+         does not answer metrics questions otwo teams, I'll find the highlights
+          guess.                            for you! Which game would you like
+                                            to see?
+└─────────┴────────┴┴┘
+
+
+Test Results
+Status          COMPLETED
+Duration        16.00s   
+Topic Pass %    100.00%  
+Action Pass %   100.00%  
+Outcome Pass %  66.67%   
+
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fetches YouTube highlight videos for attended baseball games, given a date and the home and away teams. The W6a piece-3 action demo: External Service over the YouTube_Data_API named credential.</description>
+    <localTopicLinks>
+        <genAiPluginName>game_highlights_16jdL000003d149</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>off_topic_16jdL000003d149</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>topic_selector_16jdL000003d149</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>topic_selector_16jdL000003d149</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Welcome the user and route their question to the right topic.</description>
+        <developerName>topic_selector_16jdL000003d149</developerName>
+        <genAiPluginInstructions>
+            <description>You are Highlight Scout, a concise baseball assistant. Your one job: given a game the user attended - a date plus the home and away teams - find YouTube highlight videos for that game and return the links. Use ONLY data returned by your actions. Never invent a video title or link.</description>
+            <developerName>instruction0_179dL0000057oWf</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179dL0000057oWf</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>topic_selector</localDeveloperName>
+        <masterLabel>Topic Selector</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>off_topic_16jdL000003d149</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handle anything that is not a request for game highlight videos.</description>
+        <developerName>off_topic_16jdL000003d149</developerName>
+        <genAiPluginInstructions>
+            <description>You are Highlight Scout, a concise baseball assistant. Your one job: given a game the user attended - a date plus the home and away teams - find YouTube highlight videos for that game and return the links. Use ONLY data returned by your actions. Never invent a video title or link.</description>
+            <developerName>instruction0_179dL0000057oWh</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179dL0000057oWh</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>off_topic</localDeveloperName>
+        <masterLabel>Off Topic</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>game_highlights_16jdL000003d149</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Find YouTube highlight videos for a baseball game, given the game date and the home and away teams.</description>
+        <developerName>game_highlights_16jdL000003d149</developerName>
+        <genAiPluginInstructions>
+            <description>You are Highlight Scout, a concise baseball assistant. Your one job: given a game the user attended - a date plus the home and away teams - find YouTube highlight videos for that game and return the links. Use ONLY data returned by your actions. Never invent a video title or link.</description>
+            <developerName>instruction0_179dL0000057oWg</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179dL0000057oWg</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>search_highlights_179dL0000057oWg</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>search_highlights_179dL0000057oWg</fullName>
+            <description>Search YouTube for highlight videos of one game, filtered to videos published within two days of the game date.</description>
+            <developerName>search_highlights_179dL0000057oWg</developerName>
+            <invocationTarget>GameHighlightsSearch</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>search_highlights</localDeveloperName>
+            <masterLabel>Search Highlights</masterLabel>
+        </localActions>
+        <localDeveloperName>game_highlights</localDeveloperName>
+        <masterLabel>Game Highlights</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>Highlight Scout</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlannerBundle>

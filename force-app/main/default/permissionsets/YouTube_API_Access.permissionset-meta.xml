@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Principal access to YouTube_API so the highlights action can call YouTube Data API v3. An Employee Agent runs actions as the logged-in user: assign to every user who talks to the agent (W7 lesson).</description>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>YouTube_API-YouTube_Principal</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>YouTube API Access</label>
+</PermissionSet>

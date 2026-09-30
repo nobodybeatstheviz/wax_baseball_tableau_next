@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>owner@example.com</contactEmail>
+    <description>Keeping Score W6a — OAuth client for the Salesforce Hosted MCP servers (Tableau Next, Data Cloud queries) from Claude Code / Agent SDK. Auth-code + PKCE, JWT tokens, no client secret.</description>
+    <distributionState>Local</distributionState>
+    <isProtected>false</isProtected>
+    <label>Wax TN MCP</label>
+</ExternalClientApplication>

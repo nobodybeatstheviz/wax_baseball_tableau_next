@@ -1,0 +1,50 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "hasData" : {
+      "title" : "Has Data",
+      "description" : "Internal flag: whether any videos matched.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false
+    },
+    "status" : {
+      "title" : "Status",
+      "description" : "ok, no_results, bad_date, or http_<code>.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "videoCount" : {
+      "title" : "Video Count",
+      "description" : "How many videos matched.",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "videos" : {
+      "title" : "Videos",
+      "description" : "Matching highlight videos, best match first, each with title, link, channel, and publishedAt.",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "@apexClassType/c__GameHighlightsSearch$Video"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "videosText" : {
+      "title" : "Videos Text",
+      "description" : "The videos pre-rendered as numbered lines of title then link. Empty when nothing matched.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

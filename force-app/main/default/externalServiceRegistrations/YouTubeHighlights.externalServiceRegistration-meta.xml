@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>YouTube Data API v3 search, scoped to fetching game highlight videos for the Keeping Score agent. Rides the YouTube_Data_API named credential (key on the external credential principal, never in source).</description>
+    <label>YouTube Highlights</label>
+    <namedCredential>YouTube_Data_API</namedCredential>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "YouTube Highlights",
+    "version": "1.0.0",
+    "description": "Search YouTube for baseball game highlight videos."
+  },
+  "paths": {
+    "/youtube/v3/search": {
+      "get": {
+        "operationId": "searchHighlights",
+        "summary": "Search YouTube for game highlight videos",
+        "description": "Searches YouTube for highlight videos of a baseball game. Compose the q parameter from the home team, away team, and game date, plus the word highlights. Example: Yankees vs Red Sox October 16 2003 highlights.",
+        "parameters": [
+          {
+            "name": "part",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "default": "snippet" },
+            "description": "Response detail level. Always pass the value: snippet"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Search query text: home team name, away team name, game date, plus the word highlights."
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "default": "video" },
+            "description": "Resource type. Always pass the value: video"
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 3 },
+            "description": "How many videos to return. Default 3."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "object",
+                            "properties": { "videoId": { "type": "string" } }
+                          },
+                          "snippet": {
+                            "type": "object",
+                            "properties": {
+                              "title": { "type": "string" },
+                              "channelTitle": { "type": "string" },
+                              "publishedAt": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</schema>
+    <status>Complete</status>
+</ExternalServiceRegistration>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiEvaluationDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Highlight Scout YouTube Action Tests</name>
+    <subjectName>Highlight_Scout</subjectName>
+    <subjectType>AGENT</subjectType>
+    <testCase>
+        <expectation>
+            <expectedValue>game_highlights</expectedValue>
+            <name>topic_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>[&apos;search_highlights&apos;]</expectedValue>
+            <name>action_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>Agent returns YouTube highlight videos for the October 5 2024 Yankees vs Royals game - each with a title and a youtube.com/watch link taken from the search_highlights action output, never invented.</expectedValue>
+            <name>bot_response_rating</name>
+        </expectation>
+        <inputs>
+            <utterance>I was at the Yankees vs Royals game on October 5 2024 - find me highlights of that game.</utterance>
+        </inputs>
+        <number>1</number>
+    </testCase>
+    <testCase>
+        <expectation>
+            <expectedValue>game_highlights</expectedValue>
+            <name>topic_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>[&apos;search_highlights&apos;]</expectedValue>
+            <name>action_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>Agent returns YouTube highlight videos for the May 14 2024 Red Sox vs Rays game with titles and youtube.com/watch links from the action output.</expectedValue>
+            <name>bot_response_rating</name>
+        </expectation>
+        <inputs>
+            <utterance>Show me highlights from the Red Sox vs Rays game on May 14 2024.</utterance>
+        </inputs>
+        <number>2</number>
+    </testCase>
+    <testCase>
+        <expectation>
+            <expectedValue>off_topic</expectedValue>
+            <name>topic_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>[]</expectedValue>
+            <name>action_sequence_match</name>
+        </expectation>
+        <expectation>
+            <expectedValue>Agent honestly says it only fetches game highlight videos and asks for a game date and the two teams - it does not answer metrics questions or guess.</expectedValue>
+            <name>bot_response_rating</name>
+        </expectation>
+        <inputs>
+            <utterance>What&apos;s my win rate when I see the Yankees?</utterance>
+        </inputs>
+        <number>3</number>
+    </testCase>
+</AiEvaluationDefinition>

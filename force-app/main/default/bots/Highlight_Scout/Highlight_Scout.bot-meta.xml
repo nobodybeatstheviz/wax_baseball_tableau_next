@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <agentDSLEnabled>true</agentDSLEnabled>
+    <agentType>AgentforceEmployeeAgent</agentType>
+    <botMlDomain>
+        <label>Highlight Scout</label>
+        <name>Highlight_Scout</name>
+    </botMlDomain>
+    <botSource>None</botSource>
+    <description>Fetches YouTube highlight videos for attended baseball games, given a date and the home and away teams. The W6a piece-3 action demo: External Service over the YouTube_Data_API named credential.</description>
+    <label>Highlight Scout</label>
+    <logPrivateConversationData>false</logPrivateConversationData>
+    <richContentEnabled>true</richContentEnabled>
+    <sessionTimeout>0</sessionTimeout>
+    <type>InternalCopilot</type>
+</Bot>
